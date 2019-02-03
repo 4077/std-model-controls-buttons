@@ -1,5 +1,5 @@
 {
-    "name": "fed/std-model-buttons-control",
+    "name": "fed/std-model-controls-buttons",
     "type": "ewma-module",
     "description": "ewma model buttons control",
     "authors": [
