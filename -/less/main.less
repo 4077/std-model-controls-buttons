@@ -1,0 +1,30 @@
+// head {
+@__nodeId__: ~"std_modelControls_buttons__main";
+// }
+
+.@{__nodeId__} {
+    display: flex;
+    flex-wrap: wrap;
+
+    .button, a {
+        cursor: pointer;
+        width: 33px;
+        height: 33px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text-decoration: none;
+
+        .icon {
+            font-size: 14px;
+            color: #454545;
+        }
+
+        &.hover {
+            background-color: #FFFFFF;
+            color: #404040;
+        }
+    }
+}

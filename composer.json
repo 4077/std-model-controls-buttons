@@ -1,0 +1,15 @@
+{
+    "name": "fed/std-model-buttons-control",
+    "type": "ewma-module",
+    "description": "ewma model buttons control",
+    "authors": [
+        {
+            "name": "fed",
+            "email": "ewmafw@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "fed/ewma-module-installer-plugin": "~0.0.1"
+    }
+}
