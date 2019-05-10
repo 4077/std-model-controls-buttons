@@ -8,9 +8,7 @@ class Main extends \Controller
     {
         $model = $this->model = $this->data['model'];
 
-        $this->instance_(underscore_model($model));
-
-        $this->dmap('|' . underscore_model($model), 'data');
+        $this->dmap('|' . underscore_model($model), 'buttons');
     }
 
     public function reload()
@@ -22,17 +20,12 @@ class Main extends \Controller
     {
         $v = $this->v('|');
 
-        $model = $this->model;
-        $modelXPack = xpack_model($this->model);
-
-        $buttons = $this->data('data/buttons');
+        $buttons = $this->data('buttons');
 
         foreach ($buttons as $action => $buttonData) {
             if ($call = ap($buttonData, 'call') and isset($call[0])) {
                 $path = $call[0];
                 $data = $call[1] ?? [];
-
-                $data[$this->data('data/model_index') ?: 'model'] = $modelXPack;
 
                 $v->assign('button', [
                     'CONTENT' => $this->c('\std\ui button:view', [
@@ -44,7 +37,7 @@ class Main extends \Controller
                     ])
                 ]);
             } elseif ($href = ap($buttonData, 'href')) {
-                $href = str_replace('%id', $model->id, $href);
+                $href = str_replace('%id', $this->model->id, $href);
 
                 $v->assign('button', [
                     'CONTENT' => $this->c('\std\ui tag:view:a', [
